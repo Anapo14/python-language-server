@@ -18,6 +18,8 @@ There are a few known issues in the current version of the language server:
     language server, as the error occurs in another process. A popup may appear in Windows or macOS
     when the crash is detected by the operating system.
     See [#740](https://github.com/Microsoft/python-language-server/issues/740).
+- Analyzing large Conda environments leads to spikes in CPU usage.
+    - In some cases, CPU usage is as high as 100%. See [#875](https://github.com/Microsoft/python-language-server/issues/875).
 
 
 ## Requirements
@@ -55,7 +57,7 @@ complete when the status message (in the bottom bar) disappears.
 
 When filing an issue, make sure you do the following:
 
-- Check existing issues for the same problem.
+- Check existing issues for the same problem (also see the "Known Issues" section above for widespread problems).
 - Enable trace logging by adding `"python.analysis.logLevel": "Trace"` to your configuration.
     - Adding this will cause a large amount of info to be printed to the Python output panel.
     This should not be left long term, as the performance impact of the logging is significant.
